@@ -8,11 +8,11 @@ def main():
     multiplication_pattern = r"mul\([0-9]{1,3},[0-9]{1,3}\)"
     do_pattern = r"do\(\)"
     dont_pattern = r"don\'t\(\)"
-    parseable_functions_pattern = f'{multiplication_pattern}|{do_pattern}|{dont_pattern}'
+    parsable_functions_pattern = f'{multiplication_pattern}|{do_pattern}|{dont_pattern}'
 
     with open('day3_input.txt') as file:
         text = file.read()
-    functions = re.findall(parseable_functions_pattern, text)
+    functions = re.findall(parsable_functions_pattern, text)
     sum_of_multiplications = get_sum_of_multiplications_functions(functions, multiplication_pattern, do_pattern, dont_pattern)
     print(sum_of_multiplications)
 
